@@ -4,15 +4,16 @@ const dotenv = require('dotenv');
 const path = require('path');
 const connectDatabase = require('./config/connectDatabase');
 
-dotenv.config({path: path.join(__dirname, 'config', 'config.env')});
+dotenv.config({ path: path.join(__dirname, 'config', 'config.env') });
 
 const productRoute = require('./routes/product');
 const orderRoute = require('./routes/order');
 
 connectDatabase();
+app.use(express.json())
 app.use('/api/v1', productRoute);
 app.use('/api/v1', orderRoute);
 
-app.listen(process.env.PORT,()=>{
+app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
 })

@@ -4,7 +4,7 @@
   "description": "Ecommerce platform",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon -L -e js,json,hbs,html app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
